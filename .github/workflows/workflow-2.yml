@@ -1,0 +1,18 @@
+# .github/workflows/manual-trigger.yml
+
+name: Manual Trigger Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Your name'
+        required: true
+        default: 'World'
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, ${{ inputs.name }}!"
